@@ -41,10 +41,14 @@ jobs:
     - name: "Set up Cloud SDK" 
       uses: "google-github-actions/setup-gcloud@v0"
   
+  
     
     - name: GKE Config
-      run: KUBECONFIG=~/.kube/config && gcloud container clusters get-credentials autopilot-cluster-2 --region us-central1 --project astute-citadel-372906
-
+      run: |-
+         gcloud components install gke-gcloud-auth-plugin
+         export USE_GKE_GCLOUD_AUTH_PLUGIN=True >>  ~/.bashrc
+         KUBECONFIG=~/.kube/config && gcloud container clusters get-credentials autopilot-cluster-2 --region us-central1 --project astute-citadel-372906
+         
          .
    # RUn Clean UP Script
     - name: Deploy

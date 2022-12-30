@@ -15,7 +15,7 @@ do
     echo "$RELEASE is older than a 1 day. but its a master service."	
     else
     echo "$RELEASE is older than a 1 day. Proceeding to delete it."
-    #helm delete $RELEASE
+    #helm uninstall $RELEASE
     fi
   fi
 done

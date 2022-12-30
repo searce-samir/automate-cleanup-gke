@@ -33,10 +33,13 @@ jobs:
 
 
     # Alternative option - authentication via credentials json
-    - id: 'auth'
+    - id: google-auth
       uses: 'google-github-actions/auth@v0'
       with:
         credentials_json: '${{ secrets.GKE_CLUSTER_CONNECTION }}'
+        
+    - name: "Set up Cloud SDK" 
+      uses: "google-github-actions/setup-gcloud@v0"
 
   
    # Get the GKE credentials so we can deploy to the cluster

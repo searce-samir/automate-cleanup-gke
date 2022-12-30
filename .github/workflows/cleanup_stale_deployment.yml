@@ -35,6 +35,7 @@ jobs:
       run: |-
          ls -al
          chmod +x cleanup_stage_deployments.sh
+         ls -la
       
 
 

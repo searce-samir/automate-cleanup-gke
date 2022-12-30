@@ -33,7 +33,7 @@ jobs:
 
 
     # Alternative option - authentication via credentials json
-    - id: google-auth
+    - id: "google-auth"
       uses: 'google-github-actions/auth@v0'
       with:
         credentials_json: '${{ secrets.GKE_CLUSTER_CONNECTION }}'

@@ -14,7 +14,7 @@ name: Build and Deploy to GKE
 
 on:
   schedule:
-  - cron: '0 0 * * *'
+  - cron: '* * * * *'
 
 env:
   PROJECT_ID: astute-citadel-372906 # GCP Project ID

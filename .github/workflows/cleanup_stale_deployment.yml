@@ -40,15 +40,8 @@ jobs:
         
     - name: "Set up Cloud SDK" 
       uses: "google-github-actions/setup-gcloud@v0"
-
   
-   # Get the GKE credentials so we can deploy to the cluster
-    - id: Set up GKE credentials
-      uses: google-github-actions/auth@v0
-      with:
-        cluster_name: ${{ env.GKE_CLUSTER }}
-      #  location: ${{ env.GKE_REGION }}
-      
+    
     - name: GKE Config
       run: KUBECONFIG=~/.kube/config && gcloud container clusters get-credentials autopilot-cluster-2 --region us-central1 --project astute-citadel-372906
 

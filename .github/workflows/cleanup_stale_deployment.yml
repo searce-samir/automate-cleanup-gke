@@ -44,7 +44,10 @@ jobs:
       uses: google-github-actions/get-gke-credentials@v0
       with:
         cluster_name: ${{ env.GKE_CLUSTER }}
-        location: ${{ env.GKE_REGION }}
+      #  location: ${{ env.GKE_REGION }}
+      
+    - name: GKE Config
+      run: KUBECONFIG=~/.kube/config && gcloud container clusters get-credentials autopilot-cluster-2 --region us-central1 --project astute-citadel-372906
 
          .
    # RUn Clean UP Script
